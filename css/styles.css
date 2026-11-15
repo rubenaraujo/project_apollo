@@ -1,84 +1,93 @@
 /* Typography */
 
 html {
-	font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+  font-size: clamp(14px, 0.9rem + 0.4vw, 20px);
 }
 
-@media (min-width: 576px) {
-	html {
-		font-size: 14px;
-	}
-}
-
-@media (min-width: 768px) {
-	html {
-		font-size: 16px;
-	}
-}
-
-@media (min-width: 992px) {
-	html {
-		font-size: 18px;
-	}
-}
-
-@media (min-width: 1200px) {
-	html {
-		font-size: 20px;
-	}
-}
-
-.icons-social i {
-	font-size: 3em;
-}
-
-/* Custom Styles */
+/* Layout */
 
 body {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	padding: 0 30px;
-	text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  text-align: center;
 }
 
-main > .intro {
-	font-family: 'Reem Kufi', sans-serif;
-	font-size: 3.75em;
-	font-weight: 600;
+.intro {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Reem Kufi', system-ui, sans-serif;
+  font-size: 3.75em;
+  font-weight: 600;
+  line-height: 1.1;
 }
 
-main > .tagline {
-	font-size: 1.5rem;
-	margin: 1.5rem 0;
-	font-weight: 100;
+.tagline {
+  font-size: 1.5rem;
+  margin: 1.5rem 0 2.5rem;
+  font-weight: 300;
 }
 
-.icons-social i {
-	padding: 10px;
+/* Projects */
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 48rem;
 }
 
-.icons-social a {
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 0.5rem;
+  border-radius: 1rem;
   text-decoration: none;
+  transition: transform 0.15s ease, background-color 0.15s ease;
 }
 
-.devto {
-	margin-bottom: -0.20rem;
+.project img {
+  width: 74px;
+  height: 74px;
+  object-fit: contain;
 }
 
-.devto svg {
-	margin-bottom: -0.20rem;
-	margin-left: 0.675rem;;
-	width: 2.65rem;
-	height: 2.65rem;
+.project:hover,
+.project:focus-visible {
+  transform: translateY(-3px);
 }
+
+.project:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project {
+    transition: none;
+  }
+
+  .project:hover,
+  .project:focus-visible {
+    transform: none;
+  }
+}
+
+/* Footer */
 
 footer {
   background: #000000;
@@ -88,5 +97,5 @@ footer {
 
 footer .footer-text {
   font-size: 0.875rem;
-  color: #6c757d;
+  color: #8a9199;
 }

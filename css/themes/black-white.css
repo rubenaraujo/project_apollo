@@ -1,14 +1,16 @@
 /* Theme */
 
+body,
 main {
-	background: #000000;
-	color: #FAFAFA;
+  background: #000000;
+  color: #FAFAFA;
 }
 
-.icons-social a {
-	color: #FAFAFA;
+.project {
+  color: #FAFAFA;
 }
 
-.icons-social a svg path{
-	fill: #FAFAFA;
+.project:hover,
+.project:focus-visible {
+  background: #151515;
 }
